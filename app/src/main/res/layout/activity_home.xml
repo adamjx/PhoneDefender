@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.study.gourdboy.phonedefender.activities.HomeActivity">
+    <TextView style="@style/myPageTitle"
+        android:text="功能列表"/>
+    <com.study.gourdboy.phonedefender.view.MarqueeTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:text="欢迎您！新用户，我们可以保障您的手机安全！保卫您手机上的所有关于您个人的数据！请不要卸载，谢谢！"
+        android:id="@+id/tv_welcome"/>
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gv_home_content"
+        android:gravity="center"
+        android:numColumns="3"></GridView>
+</LinearLayout>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PhoneDefender</string>
+    <string name="sample_device_admin">我的设备管理员</string>
+    <string name="sample_device_admin_description">我的设备管理描述</string>
+</resources>
