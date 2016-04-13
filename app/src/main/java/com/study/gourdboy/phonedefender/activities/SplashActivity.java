@@ -55,7 +55,8 @@ public class SplashActivity extends Activity
         {
             waitWhile();
         }
-        copydb();
+        copydb("antivirus.db");
+        copydb("naddress.db");
     }
 
     private void waitWhile()
@@ -67,7 +68,7 @@ public class SplashActivity extends Activity
             {
                 try
                 {
-                    Thread.sleep(5000);
+                    Thread.sleep(2000);
                 }
                 catch (InterruptedException e)
                 {
@@ -78,9 +79,9 @@ public class SplashActivity extends Activity
         }).start();
     }
 
-    private void copydb()
+    private void copydb(String dbname)
     {
-        File file = new File(getFilesDir(),"location.db");
+        File file = new File(getFilesDir(),dbname);
         if(file.exists())
         {
             return;
@@ -88,7 +89,7 @@ public class SplashActivity extends Activity
         AssetManager assetManager = getAssets();
         try
         {
-            InputStream is = assetManager.open("naddress.db");
+            InputStream is = assetManager.open(dbname);
             FileOutputStream fos = new FileOutputStream(file);
             byte[] bytes = new byte[1024];
             int length = -1;

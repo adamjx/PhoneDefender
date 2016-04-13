@@ -7,6 +7,7 @@ import android.graphics.PixelFormat;
 import android.os.IBinder;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
@@ -14,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.study.gourdboy.phonedefender.R;
+import com.study.gourdboy.phonedefender.application.MyApplication;
 import com.study.gourdboy.phonedefender.dao.NumberLocationDao;
 
 public class MyNumberLocationService extends Service
@@ -69,6 +71,9 @@ public class MyNumberLocationService extends Service
         params.width = WindowManager.LayoutParams.WRAP_CONTENT;
         params.format = PixelFormat.TRANSLUCENT;//半透明
         params.type = WindowManager.LayoutParams.TYPE_TOAST;
+        params.gravity = Gravity.LEFT|Gravity.TOP;
+        params.x = MyApplication.configsp.getInt("toastx",200);
+        params.y = MyApplication.configsp.getInt("toasty",300);
         params.flags = WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON|
                 WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
                 |WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE;

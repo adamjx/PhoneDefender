@@ -105,6 +105,19 @@ public class SettingItem extends RelativeLayout implements View.OnClickListener
             }
         }
     }
+    public void setCheckBox(boolean flag)
+    {
+        if(flag)
+        {
+            cb_setting_update.setChecked(true);
+            tv_setting_updatestatus.setText(onstring);
+        }
+        else
+        {
+            tv_setting_updatestatus.setText(offstring);
+            cb_setting_update.setChecked(false);
+        }
+    }
     public interface MyOnclickListener
     {
         void myCheckOnclick();

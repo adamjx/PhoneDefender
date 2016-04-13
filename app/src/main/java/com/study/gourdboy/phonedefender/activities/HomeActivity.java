@@ -90,8 +90,29 @@ public class HomeActivity extends ActionBarActivity
                         showInputpwdDialog();
                     }
                     break;
+                case 1:
+                    startActivity(new Intent(HomeActivity.this,TelephoneManagerActivity.class));
+                    break;
+                case 2:
+                    startActivity(new Intent(HomeActivity.this,PackageManagerActivity.class));
+                    break;
+                case 3:
+                    startActivity(new Intent(HomeActivity.this,ProcessManagerActivity.class));
+                    break;
+                case 4:
+                    startActivity(new Intent(HomeActivity.this,DataUsageActivity.class));
+                    break;
+                case 5:
+                    startActivity(new Intent(HomeActivity.this,ScanVirusActivity.class));
+                    break;
+                case 6:
+                    startActivity(new Intent(HomeActivity.this,CleanCacheActivity.class));
+                    break;
                 case 7:
                     startActivity(new Intent(HomeActivity.this,AdvanceToolActivity.class));
+                    break;
+                case 8:
+                    startActivity(new Intent(HomeActivity.this,SettingActivity.class));
                     break;
             }
         }

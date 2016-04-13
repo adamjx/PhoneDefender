@@ -9,6 +9,11 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.RECEIVE_SMS"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
     <application
         android:name=".application.MyApplication"
@@ -84,6 +89,56 @@
             android:enabled="true"
             android:exported="true">
         </service>
+
+        <activity android:name=".activities.SettingActivity">
+        </activity>
+        <activity android:name=".activities.SetToastLocationActivity">
+        </activity>
+        <activity android:name=".activities.PackageManagerActivity">
+        </activity>
+
+        <service
+            android:name=".service.MyLockAppService"
+            android:exported="false">
+        </service>
+
+        <activity
+            android:name=".activities.LockAppActivity"
+            android:launchMode="singleInstance">
+        </activity>
+
+        <provider
+            android:name=".provider.MyAppLockProvider"
+            android:authorities="com.study.gourdboy.phonedefender.applock"/>
+
+        <activity android:name=".activities.ProcessManagerActivity">
+        </activity>
+
+        <receiver android:name=".widget.MyWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/example_appwidget_info"/>
+        </receiver>
+
+        <activity android:name=".activities.CleanCacheActivity">
+        </activity>
+        <activity android:name=".activities.ScanVirusActivity">
+        </activity>
+        <activity android:name=".activities.TelephoneManagerActivity">
+        </activity>
+
+        <service
+            android:name=".service.BlackNumService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+
+        <activity android:name=".activities.DataUsageActivity">
+        </activity>
     </application>
 
 </manifest>
